@@ -28,7 +28,7 @@ Employee.prototype.getSalary = function () {
     balance = getRndInteger(1000, 500);
     
   }
-  tax=balance*7.5 /100;
+  tax= Math.floor (balance*7.5 /100);
  
   
 
