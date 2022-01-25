@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +9,71 @@
     <link rel="stylesheet" href="./style/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <header>
         <!-- <a  href="#" class="logo">logo</a> -->
         <img src="https://m.eyeofriyadh.com/directory/images/2019/06/51aa54058833.jpg" class="logo" alt="">
 
-       <nav class="nav"> 
-        <a href="#">Home</a>
-        <a href="#">Accounting</a>
-       </nav>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Accounting</a>
+        </nav>
     </header>
     <main>
-        <section class="section1">
-            <!-- <img src="https://m.eyeofriyadh.com/directory/images/2019/06/51aa54058833.jpg" alt=""> -->
-           
-            
+        <section>
+            <h2> Add an Employee : </h2>
+
+            <form id="empForm">
+                <fieldset>
+                    <legend style="text-align: center;">Add an Employee</legend>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="fn" value="" />
+                    <br />
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="ln"  />
+                    <br />
+                    <label for="departments" style="margin-left: -15px  ">Department:</label>
+                    <select name="departments" style="width: 165px;" id="departments">
+                        <option >.. </option>
+                        <option value="Administration">Administration</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Development">Development</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                    <br />
+                    <label for="Level" style="margin-left: 40px;">Level:</label>
+                    <select name="Level" id="Level" style="width: 165px;">
+                        <option >.. </option>
+                        <option value="Junior">Junior</option>
+                        <option value="Mid-Senior">Mid-Senior</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+
+                    
+                    <br />
+                    <label for="img" it="img" >Image url:</label>
+                    <input type="text" name="img" id="img" placeholder="Optional" />
+                    <br />
+                    <input type="submit" style="border-radius: 12px" class="submit" value="Add  an Employee" />
+                </fieldset>
+            </form>
+
+        </section>
+        <section id="empSec">
+
         </section>
 
     </main>
     <footer>
-       
+
         <nav>
             <ul>
                 <li> <a style="color: rgb(69, 30, 209);" href="#"><i class="fab fa-facebook"></i></a> </li>
                 <li><a style="color: rgb(190, 89, 21);" href="#"><i class="fab fa-instagram"></i></a></li>
                 <li><a style="color: rgb(26, 185, 5);" href="#"><i class="fab fa-whatsapp"></i></a></li>
-                <li><a style="color: rgb(0, 0, 0);" href="https://github.com/hashem98?tab=repositories"><i class="fab fa-github"></i></a></li>
+                <li><a style="color: rgb(0, 0, 0);" href="https://github.com/hashem98?tab=repositories"><i
+                            class="fab fa-github"></i></a></li>
 
             </ul>
         </nav>
@@ -42,4 +82,5 @@
     <script src="./js/app.js"></script>
 
 </body>
+
 </html>
