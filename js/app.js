@@ -15,7 +15,7 @@ function Employee(employeeId, firstName ,lastName, department, level ,salary,ima
   // let firstNameCap=this.firstName[0].toUpperCase()+this.firstName.substring(1);
   this.department = department;
   this.level = level;
-  this.imageUrl = `../assets/${this.firstName}.jpg` ;
+  this.imageUrl = `./assets/${this.firstName}.jpg` ;
   this.salary=salary;
 
 }
