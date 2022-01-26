@@ -2,6 +2,8 @@
 let empForm = document.getElementById('empForm');
 let empSec = document.getElementById('empSec');
 empSec.style.display="inline";
+let allEmplo = [];
+checkLocalAndPush();
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -42,7 +44,9 @@ Employee.prototype.getSalary = function () {
   
   return netSalary;
 }
-Employee.prototype.render = function () {
+function render  (empFromLS) {
+  empSec.innerHTML="";
+  for (let i = 0; i < empFromLS.length; i++){
   let div1 = document.createElement('div');
 let img = document.createElement('img');
 let div2 = document.createElement('div');
@@ -53,9 +57,9 @@ let h5 = document.createElement('h5');
        img.setAttribute("class","img")
        div1.setAttribute
       div1.appendChild(img);
-      h5.textContent=` Name: ${this.fullName}  ID:${this.employeeId}  Department:${this.department} 
-                        Level:${this.level}
-                        Salary:${this.salary}
+      h5.textContent=` Name: ${empFromLS[i].fullName}  ID:${empFromLS[i].employeeId}  Department:${empFromLS[i].department} 
+                        Level:${empFromLS[i].level}
+                        Salary:${empFromLS[i].salary}
       `;
       div2.setAttribute("class","container");
       div2.appendChild(h5);
@@ -63,10 +67,10 @@ let h5 = document.createElement('h5');
       
      
 
-      img.setAttribute('src',this.imageUrl);
+      img.setAttribute('src',empFromLS[i].imageUrl);
      empSec.appendChild(div1);
      
-
+  }
 }
 var generatID = (function(num) {
   return function() {
@@ -84,9 +88,37 @@ function handelSubmit(event){
   let imag=event.target.img.value;
    let newemp = new Employee(generatID(),firstName[0].toUpperCase()+firstName.substring(1),lastName,department, level);
   let salary1=newemp.getSalary();
-  newemp.render();
+  allEmplo.push(newemp);
+  let jsonArr = toJSON();
+  saveToLocalS(jsonArr);
+  render(readFromLocalS());
 
 }
+function checkLocalAndPush() {
+  if (allEmplo.length == 0) {
+      let arr = readFromLocalS();
+      if (arr.length != 0) {
+          allEmplo = arr;
+      }
+  }
+}
+function readFromLocalS() {
+  let jsonArr = localStorage.getItem('employees');
+  let arr = JSON.parse(jsonArr);
+  if (arr !== null) {
+      return arr;
+  } else {
+      return [];
+  }
+}
+function toJSON() {
+  let jsonArray = JSON.stringify(allEmplo);
+  return jsonArray;
+}
+function saveToLocalS(jsonArray) {
+  localStorage.setItem('employees', jsonArray)
+}
+render(readFromLocalS());
 empForm.addEventListener('submit', handelSubmit);
 
 

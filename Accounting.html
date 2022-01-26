@@ -15,14 +15,42 @@
 
        <nav class="nav"> 
         
-        <a href="#">Home</a>
+        <a href="./index.html">Home</a>
         <a href="#">Accounting</a>
        </nav>
     </header>
     <main>
-        <section class="section1">
-            <!-- <img src="https://m.eyeofriyadh.com/directory/images/2019/06/51aa54058833.jpg" alt=""> -->
-           
+        <section class="tableSec">
+            <h2>  Employees : </h2>
+            <table class="table">
+                <tr>
+                    <th>Department Name</th>
+                    <th>#of Employees</th>
+                    <th>Average salary</th>
+                </tr>
+                <div class="divTable">
+                <tr>
+                  <td>Administration</td>
+                  <td id="adminCount"></td>
+                  <td id="a"></td>  
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td id="marketingCount"></td>
+                    <td id="m"></td>
+                </tr>
+                <tr>
+                    <td>Development</td>
+                    <td id="developCount"></td>
+                    <td id="d"></td>
+                </tr>
+                <tr>
+                    <td>Finance</td>
+                    <td id="financeCount"></td>
+                    <td id="f"></td>
+                </tr>
+               </div>
+            </table>           
             
         </section>
 
@@ -38,9 +66,17 @@
 
             </ul>
         </nav>
+        <table>
+            <tr>
+                <th>#of employees</th>
+                <th>avg salary</th>
+            </tr>
+            <tr></tr>
+        </table>
         <p>&copy;2022</p>
     </footer>
-    <!-- <script src="./js/app.js"></script> -->
 
+    <!-- <script src="./js/app.js"></script> -->
+<script src="./js/accounting.js"></script>
 </body>
 </html>
